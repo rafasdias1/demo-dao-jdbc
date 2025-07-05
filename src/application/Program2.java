@@ -29,5 +29,38 @@ public class Program2 {
         for(Department obj:list){
             System.out.println(obj);
         }
+
+
+        System.out.println();
+
+        System.out.println("===TEST 3: department insert===");
+
+        Department department1=new Department(null,"Constructions");
+        departmentDao.insert(department1);
+        System.out.println("Inserted! New id= "+department1.getId());
+
+
+        System.out.println();
+
+        System.out.println("===TEST 4: department update===");
+
+        department1=departmentDao.findById(1);
+        department1.setName("Human Resources");
+        departmentDao.update(department1);
+
+        System.out.println("Update complete");
+
+        System.out.println();
+
+        System.out.println("===TEST 5: department delete===");
+
+        System.out.print("Enter id for delete:");
+        int id=sc.nextInt();
+        departmentDao.deleteById(id);
+
+        System.out.println("Delete complete");
+
+
+
     }
 }
